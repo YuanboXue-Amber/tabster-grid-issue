@@ -1,0 +1,27 @@
+diff --git a/node_modules/@fluentui/react-bindings/dist/es/FocusZone/FocusTrapZone.js b/node_modules/@fluentui/react-bindings/dist/es/FocusZone/FocusTrapZone.js
+index ae01157..3feff8d 100644
+--- a/node_modules/@fluentui/react-bindings/dist/es/FocusZone/FocusTrapZone.js
++++ b/node_modules/@fluentui/react-bindings/dist/es/FocusZone/FocusTrapZone.js
+@@ -436,6 +436,7 @@ FocusTrapZone.propTypes = {
+ FocusTrapZone.defaultProps = {
+   as: 'div',
+   isClickableOutsideFocusTrap: true,
+-  forceFocusInsideTrapOnOutsideFocus: false
++  forceFocusInsideTrapOnOutsideFocus: false,
++  "data-tabster": "{\"uncontrolled\": {}}",
+ };
+ //# sourceMappingURL=FocusTrapZone.js.map
+diff --git a/node_modules/@fluentui/react-bindings/dist/es/FocusZone/FocusZone.js b/node_modules/@fluentui/react-bindings/dist/es/FocusZone/FocusZone.js
+index 9cece0f..fe46ebd 100644
+--- a/node_modules/@fluentui/react-bindings/dist/es/FocusZone/FocusZone.js
++++ b/node_modules/@fluentui/react-bindings/dist/es/FocusZone/FocusZone.js
+@@ -1275,7 +1275,8 @@ FocusZone.defaultProps = {
+   direction: FocusZoneDirection.bidirectional,
+   as: 'div',
+   preventDefaultWhenHandled: true,
+-  shouldRaiseClicks: false
++  shouldRaiseClicks: false,
++  "data-tabster": "{\"uncontrolled\": {}}",
+ };
+ FocusZone.displayName = 'FocusZone';
+ FocusZone.className = 'ms-FocusZone';

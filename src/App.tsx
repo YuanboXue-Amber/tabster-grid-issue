@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Button as V0Button, Popup } from "@fluentui/react-northstar";
+import { Button } from "@fluentui/react-components";
+import { useArrowNavigationGroup } from "@fluentui/react-tabster";
+import * as React from "react";
+import { Grid } from "./Grid";
 
-function App() {
+const Content = () => {
+  const arrowKeyNavigationAttributes = useArrowNavigationGroup({
+    axis: "grid",
+    tabbable: false,
+    memorizeCurrent: true,
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* this button is important */}
+      <V0Button>V0Button outside of grid</V0Button>
+      {/* this div is important */}
+      <div>
+        <Grid {...arrowKeyNavigationAttributes} role='menu' columns={3}>
+          {new Array(9).fill(0).map((i, idx) => (
+            <Button key={idx}>{`grid-item-${idx}`}</Button>
+          ))}
+        </Grid>
+      </div>
+    </>
   );
-}
+};
 
-export default App;
+export const Default = () => {
+  return (
+    <Popup
+      trigger={<V0Button>trigger</V0Button>}
+      trapFocus
+      content={<Content />}
+    />
+  );
+};

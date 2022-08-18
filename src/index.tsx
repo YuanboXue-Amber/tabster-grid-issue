@@ -1,19 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import * as ReactDOM from "react-dom";
+import {
+  Provider as V0Provider,
+  teamsV2Theme,
+} from "@fluentui/react-northstar";
+import { FluentProvider, teamsLightTheme } from "@fluentui/react-components";
+import { PortalCompatProvider } from "@fluentui/react-portal-compat";
+import { Default as Example } from "./App";
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+ReactDOM.render(
+  <FluentProvider theme={teamsLightTheme}>
+    <PortalCompatProvider>
+      <V0Provider theme={teamsV2Theme}>
+        <Example />
+      </V0Provider>
+    </PortalCompatProvider>
+  </FluentProvider>,
+  document.getElementById("root")
 );
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
