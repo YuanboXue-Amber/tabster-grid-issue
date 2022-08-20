@@ -1,9 +1,8 @@
-import { Button as V0Button, Popup } from "@fluentui/react-northstar";
 import { useArrowNavigationGroup } from "@fluentui/react-tabster";
 import * as React from "react";
 import { Grid } from "./Grid";
 
-const Content = () => {
+export const Content = () => {
   const arrowKeyNavigationAttributes = useArrowNavigationGroup({
     axis: "grid",
     tabbable: false,
@@ -27,10 +26,8 @@ const Content = () => {
 
 export const Default = () => {
   return (
-    <Popup
-      trigger={<V0Button>trigger</V0Button>}
-      trapFocus
-      content={<Content />}
-    />
+    <div data-tabster={'{"uncontrolled": {}}'}>
+      <Content />
+    </div>
   );
 };
